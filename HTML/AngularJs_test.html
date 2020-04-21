@@ -1,0 +1,29 @@
+<div ng-app = "app" data-ng-controller="parentCtrl">
+    <input data-ng-model = "args.content">
+    <div data-ng-controller="childCtrl">
+        <input data-ng-model="args.content">
+    </div>
+</div>
+angular.module('app', [])
+.controller('parentCtrl', ['$scope',
+function($scope) {
+    $scope.args = {};
+    $scope.args.content = 'test';
+}])
+.controller('childCtrl', ['$scope',
+function($scope){}])
+
+
+<div ng-app = "app" data-ng-controller="parentCtrl">
+    <input data-ng-model = "args">
+    <div data-ng-controller="childCtrl">
+        <input data-ng-model="args">
+    </div>
+</div>
+angular.module('app', [])
+.controller('parentCtrl', ['$scope',
+function($scope) {
+    $scope.args = 'test';
+}])
+.controller('childCtrl', ['$scope',
+function($scope){}])
